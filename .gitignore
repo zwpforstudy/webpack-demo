@@ -1,6 +1,8 @@
 node_modules
 dist
+npm-debug.log
+yarn.lock
 
-.idea/
+.idea/*.xml
 .vscode/
 *.DS_Store
