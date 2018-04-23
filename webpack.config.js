@@ -5,6 +5,7 @@ const fs = require('fs')
 const url = path.resolve(__dirname, 'src/pages')
 
 let entryFile = {}
+
 function readFileFun() {
   var files = fs.readdirSync(url)
   files.forEach((file) => {
@@ -12,16 +13,15 @@ function readFileFun() {
     entryFile[name] = path.resolve(url) + '/' + file + '/index.js'
   })
 }
+
 readFileFun()
 console.log('entryFile', entryFile)
-
-
 module.exports = {
   entry: entryFile,
   output: {
     filename: '[name]_[chunkhash:6].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
+    publicPath: path.resolve(__dirname, 'dist')
   },
   resolve: {
     // extensions: ['.js'],
@@ -31,9 +31,7 @@ module.exports = {
     symlinks: false
   },
   // devtool: 'inline-source-map',
-  devServer: {
-      contentBase: './dist'
-  },
+  devtool: 'cheap-module-source-map',
   module: {
     rules: [{
       test: /\.css$/,
@@ -45,17 +43,11 @@ module.exports = {
       test: /\.(woff|woff2|eot|ttf|otf)$/,
       use: ['file-loader'],
     },
-    //   {
-    //   test: /\.js$/,
-    //   include: url,
-    //   loader: "babel-loader"
-    // }
+      //   {
+      //   test: /\.js$/,
+      //   include: url,
+      //   loader: "babel-loader"
+      // }
     ]
-
-  },
-  devServer: {
-    contentBase: path.join(__dirname, "dist"),
-    compress: true,
-    port: 9000
   }
 }
