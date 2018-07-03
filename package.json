@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "node dev_server.js --mode development --progress",
+        "start": "node dev_server.js NODE_ENV=dev --progress",
         "build": "webpack --mode production --config webpack.config.js",
         "dev": "webpack --mode development --config webpack.config.js",
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,6 +15,8 @@
     "devDependencies": {
         "css-loader": "^0.28.11",
         "file-loader": "^1.1.11",
+        "html-loader": "^0.5.5",
+        "html-webpack-plugin": "^3.2.0",
         "style-loader": "^0.20.3",
         "url-loader": "^1.0.1",
         "webpack-cli": "^2.0.13",

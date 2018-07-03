@@ -19,7 +19,9 @@ function readFileFun() {
       chunks: [name],// 每个html引用的js模块，也可以在这里加上vendor等公用模块
       minify: { //压缩HTML文件
         removeComments: true, //移除HTML中的注释
-        collapseWhitespace: false //删除空白符与换行符
+        collapseWhitespace: false, //删除空白符与换行符
+        removeEmptyAttributes: true,
+        removeAttributeQuotes: true,
       }
     }));
     entryFile[name] = path.resolve(url) + '/' + file + '/index.js'
