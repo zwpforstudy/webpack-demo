@@ -1,10 +1,8 @@
 const webpack = require('webpack');
 const webpackDevServer = require('webpack-dev-server');
-const webpackDevConfig = require('./webpack.config.js');
+const webpackDevConfig = require('./webpack.dev.config.js');
 const compiler = webpack(webpackDevConfig);
-console.log('webpackDevConfig', webpackDevConfig)
 
-console.log('publicPath', webpackDevConfig.output.publicPath)
 const options = {
     contentBase: webpackDevConfig.output.publicPath,
     publicPath: '/',//设置浏览器打开首页

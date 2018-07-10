@@ -2,9 +2,10 @@ const path = require('path')
 const fs = require('fs')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const url = path.resolve(__dirname, 'src/pages')
+const url = path.resolve(__dirname, '../src/pages')
 let entryFile = {}
 let plugins = []
+// const publicPath = 'http://localhost:5000/';
 
 function readFileFun() {
   var files = fs.readdirSync(url)
@@ -44,8 +45,6 @@ module.exports = {
     },
     symlinks: false
   },
-  // devtool: 'inline-source-map',
-  devtool: 'cheap-module-source-map',
   module: {
     rules: [{
       test: /\.css$/,
@@ -64,17 +63,5 @@ module.exports = {
       // }
     ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      // 生成出来的html文件名
-      filename: name + '.html',
-      template: './template.html',// 每个html的模版，这里多个页面使用同一个模版
-      inject: true, // 自动将引用插入html
-      chunks: [name],// 每个html引用的js模块，也可以在这里加上vendor等公用模块
-      minify: { //压缩HTML文件
-        removeComments: true, //移除HTML中的注释
-        collapseWhitespace: false //删除空白符与换行符
-      }
-    })
-  ]
+  plugins: plugins
 }

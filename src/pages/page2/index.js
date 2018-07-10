@@ -6,7 +6,7 @@ console.log('bubuub')
 
 function component() {
   let element = document.createElement('div');
-  let content = 'path.dirname: ' + path.dirname()
+  let content = 'path2'
   element.innerHTML = content
   return element
 }
