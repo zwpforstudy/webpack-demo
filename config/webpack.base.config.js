@@ -15,7 +15,7 @@ function readFileFun() {
     plugins.push(new HtmlWebpackPlugin({
       // 生成出来的html文件名
       filename: name + '.html',
-      template: './template.html',// 每个html的模版，这里多个页面使用同一个模版
+      template: path.resolve(__dirname, `${url}/${name}/index.html`),// 每个html的模版，这里多个页面使用同一个模版
       inject: true, // 自动将引用插入html
       chunks: [name],// 每个html引用的js模块，也可以在这里加上vendor等公用模块
       minify: { //压缩HTML文件
