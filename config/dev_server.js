@@ -5,6 +5,7 @@ const compiler = webpack(webpackDevConfig);
 
 /*
  * 自动编译刷新：https://www.cnblogs.com/hhhyaaon/p/5664002.html
+ * 自动编译刷新：https://www.jianshu.com/p/941bfaf13be1
  * "start": "webpack-dev-server --hot --inline --port 5000 --config ./config/webpack.dev.config.js"(cli 配置，但是
  * 入口文件没找到)
  */

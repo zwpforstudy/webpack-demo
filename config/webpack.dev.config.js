@@ -2,7 +2,6 @@ const path = require('path')
 const webpackMerge = require('webpack-merge')
 const webpackBaseConfig = require('./webpack.base.config')
 // const webpack = require('webpack')
-// const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 let entry = {}
 Object.getOwnPropertyNames((webpackBaseConfig.entry || {})).map(function (name) {
