@@ -10,6 +10,4 @@ module.exports = webpackMerge(webpackBaseConfig, {
     path: path.resolve(__dirname, 'dist'),
     publicPath: path.resolve(__dirname, 'dist')
   },
-  // devtool: 'inline-source-map',
-  devtool: 'cheap-module-source-map',
 })

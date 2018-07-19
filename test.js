@@ -24,7 +24,28 @@ var obj = {
 function ddd() {
     console.log(this)
 }
-console.log(this)
+// console.log(this)
 
-obj.count()
-ddd()
+// obj.count()
+// ddd()
+
+function foo(x) {
+  return function () {
+    console.log(x)
+  }
+}
+foo(3)()
+
+var isType = function (type) {
+  return function (obj) {
+    return toString.call(obj) == `[object ${type}]`
+  }
+}
+
+var isString = isType('String')
+var isFunction = isType('Function')
+
+console.log(isString('mmmmm'))
+console.log(isString([1,2,3]))
+
+console.log('mmmmm'.toString)
